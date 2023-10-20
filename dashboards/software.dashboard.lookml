@@ -14,7 +14,7 @@
     filters:
       events__target__asset__software.name: "-NULL"
     sorts: [events.software_count desc 0]
-    limit: 50
+    limit: 10
     column_limit: 50
     value_labels: labels
     label_type: labPer
@@ -88,9 +88,9 @@
     truncate_header: false
     minimum_column_width: 75
     series_labels:
-      events__target__asset__software.name: name
-      events.software_version: version
-      events.software_version_count: count
+      events__target__asset__software.name: Name
+      events.software_version: Version
+      events.software_version_count: Count
     series_column_widths:
       events.software_version_count: 100
     series_cell_visualizations:
@@ -161,8 +161,8 @@
     truncate_header: false
     minimum_column_width: 75
     series_labels:
-      events__target__asset__software.description: software_type
-      events.software_type_count: count
+      events__target__asset__software.description: Software Type
+      events.software_type_count: Count
     series_column_widths:
       events.software_type_count: 100
     series_cell_visualizations:
@@ -235,13 +235,13 @@
     truncate_header: false
     minimum_column_width: 75
     series_labels:
-      events__target__asset__software.description: software_type
-      events__target__asset__attribute__labels_version_addl.value: version.addl
-      events.software_version: version
-      events__target__asset__software.name: name
-      events__target__asset__ip.events__target__asset__ip: tx_host
-      events.observer__hostname: sensor_name
-      events.event_timestamp_time: Timestamp
+      events__target__asset__software.description: Software Type
+      events__target__asset__attribute__labels_version_addl.value: Version Details
+      events.software_version: Version
+      events__target__asset__software.name: Name
+      events__target__asset__ip.events__target__asset__ip: Source Host
+      events.observer__hostname: Sensor Name
+      events.event_timestamp_time: Time
       events.external_link: Raw Logs
     x_axis_gridlines: false
     y_axis_gridlines: true

@@ -462,7 +462,7 @@
     allow_multiple_values: true
     required: false
     ui_config:
-      type: dropdown_menu
+      type: tag_list
       display: inline
     model: corelight-chronicle
     explore: events

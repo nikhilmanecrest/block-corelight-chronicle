@@ -93,8 +93,8 @@
     truncate_header: false
     minimum_column_width: 75
     series_labels:
-      events__principal__ip.events__principal__ip: id_orig_h
-      events.dns_originators_count: count
+      events__principal__ip.events__principal__ip: Source IP
+      events.dns_originators_count: Count
     series_cell_visualizations:
       events.dns_originators_count:
         is_active: false
@@ -148,7 +148,7 @@
       events__about__labels__qtype_name.value: PTR
       events__about__labels__rcode_name.value: NOERROR
     sorts: [events.dns_reverse_queries_count desc 0]
-    limit: 5000
+    limit: 10
     column_limit: 50
     show_view_names: false
     show_row_numbers: true
@@ -171,8 +171,8 @@
     truncate_header: false
     minimum_column_width: 75
     series_labels:
-      events__network__dns__questions.name: query
-      events.dns_reverse_queries_count: count
+      events__network__dns__questions.name: Query
+      events.dns_reverse_queries_count: Count
     series_cell_visualizations:
       events.dns_reverse_queries_count:
         is_active: false
@@ -224,7 +224,7 @@
       events__about__labels__qtype_name.value: PTR
       events__about__labels__rcode_name.value: NXDOMAIN
     sorts: [events.dns_reverse_queries_ned_count desc 0]
-    limit: 5000
+    limit: 10
     column_limit: 50
     show_view_names: false
     show_row_numbers: true
@@ -247,8 +247,8 @@
     truncate_header: false
     minimum_column_width: 75
     series_labels:
-      events__network__dns__questions.name: query
-      events.dns_reverse_queries_ned_count: count
+      events__network__dns__questions.name: Query
+      events.dns_reverse_queries_ned_count: Count
     series_cell_visualizations:
       events.dns_reverse_queries_ned_count:
         is_active: false
@@ -320,8 +320,8 @@
     truncate_header: false
     minimum_column_width: 75
     series_labels:
-      dns.query_derived: query
-      dns.queries_count_derived: count by unique originators
+      dns.query_derived: Query
+      dns.queries_count_derived: Count By Unique Originators
     series_cell_visualizations:
       dns.queries_count_derived:
         is_active: false
@@ -392,8 +392,8 @@
     truncate_header: false
     minimum_column_width: 75
     series_labels:
-      dns.queries_ned_count_derived: count by unique originators
-      dns.query_ned_derived: query
+      dns.queries_ned_count_derived: Count By Unique Originators
+      dns.query_ned_derived: Query
     series_cell_visualizations:
       dns.queries_ned_count_derived:
         is_active: false
@@ -482,7 +482,7 @@
     allow_multiple_values: true
     required: false
     ui_config:
-      type: dropdown_menu
+      type: tag_list
       display: inline
     model: corelight-chronicle
     explore: events

@@ -14,6 +14,7 @@ For more information on the Block structure and customization, refer to [Looker 
 
 - This block works with Chronicle datasets in Google BigQuery.
 - The BigQuery Export feature needs to be enabled for your Chronicle tenant. (Reach out to your Chronicle representative to set this up.)
+- The connection with Chronicle dataset needs to be created in Looker, refer to [Connecting with DB](https://cloud.google.com/looker/docs/connecting-to-your-db) 
 
 ### Installation steps
 

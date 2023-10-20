@@ -1,12 +1,12 @@
-- dashboard: rdp_inferences_overview
+- dashboard: security_workflows__rdp_inferences_overview
   title: Security Workflows - RDP Inferences Overview
   layout: newspaper
   preferred_viewer: dashboards-next
   description: ''
   preferred_slug: xB2EncZhOBTzd91iFvpx4j
   elements:
-  - name: Name
-    title: Name
+  - title: Inferences
+    name: Inferences
     model: corelight-chronicle
     explore: events
     type: looker_pie
@@ -67,14 +67,14 @@
     hidden_pivots: {}
     listen:
       Time Range: events.event_timestamp_time
-      System Name: events.observer__hostname__filter
       Event Type: events.metadata__product_event_type
+      Corelight Sensor: events.observer__hostname__filter
     row: 0
     col: 0
     width: 12
     height: 5
-  - name: Successful Connections
-    title: Successful Connections
+  - title: Successful Connections
+    name: Successful Connections
     model: corelight-chronicle
     explore: events
     type: single_value
@@ -141,14 +141,14 @@
     defaults_version: 1
     listen:
       Time Range: events.event_timestamp_time
-      System Name: events.observer__hostname__filter
       Event Type: events.metadata__product_event_type
+      Corelight Sensor: events.observer__hostname__filter
     row: 5
     col: 0
     width: 7
     height: 4
-  - name: Failed Connections
-    title: Failed Connections
+  - title: Failed Connections
+    name: Failed Connections
     model: corelight-chronicle
     explore: events
     type: single_value
@@ -215,14 +215,14 @@
     defaults_version: 1
     listen:
       Time Range: events.event_timestamp_time
-      System Name: events.observer__hostname__filter
       Event Type: events.metadata__product_event_type
+      Corelight Sensor: events.observer__hostname__filter
     row: 5
     col: 7
     width: 7
     height: 4
-  - name: Security Protocols Used
-    title: Security Protocols Used
+  - title: Security Protocols Used
+    name: Security Protocols Used
     model: corelight-chronicle
     explore: events
     type: looker_pie
@@ -282,8 +282,8 @@
     hidden_pivots: {}
     listen:
       Time Range: events.event_timestamp_time
-      System Name: events.observer__hostname__filter
       Event Type: events.metadata__product_event_type
+      Corelight Sensor: events.observer__hostname__filter
     row: 9
     col: 0
     width: 24
@@ -302,7 +302,7 @@
       events.observer__hostname: "-NULL"
       events__about__labels.value: "-NULL"
     sorts: [events__about__labels.value, events.event_timestamp_date desc]
-    limit: 500
+    limit: 5000
     column_limit: 50
     dynamic_fields:
     - measure: count_of_metadata_id
@@ -344,7 +344,7 @@
             id: APWA - count_of_metadata_id, name: APWA}, {axisId: PWA - count_of_metadata_id,
             id: PWA - count_of_metadata_id, name: PWA}], showLabels: false, showValues: true,
         unpinAxis: false, tickDensity: default, tickDensityCustom: 5, type: linear}]
-    x_axis_label: ''
+    x_axis_label: 'Time'
     x_axis_zoom: false
     y_axis_zoom: false
     x_axis_label_rotation:
@@ -354,14 +354,14 @@
     hidden_pivots: {}
     listen:
       Time Range: events.event_timestamp_time
-      System Name: events.observer__hostname__filter
       Event Type: events.metadata__product_event_type
+      Corelight Sensor: events.observer__hostname__filter
     row: 0
     col: 12
     width: 12
     height: 5
-  - name: Connecting Users
-    title: Connecting Users
+  - title: Connecting Users
+    name: Connecting Users
     model: corelight-chronicle
     explore: events
     type: looker_grid
@@ -394,9 +394,9 @@
     truncate_header: false
     minimum_column_width: 75
     series_labels:
-      events__about__labels__connecting__user.value: Connecting_User
-      events__about__labels.value: auth_success
-      events.value_count: count
+      events__about__labels__connecting__user.value: Connecting User
+      events__about__labels.value: Auth Success
+      events.value_count: Count
     series_cell_visualizations:
       events.value_count:
         is_active: false
@@ -427,15 +427,15 @@
     totals_color: "#808080"
     defaults_version: 1
     listen:
-      System Name: events.observer__hostname__filter
       Time Range: events.event_timestamp_time
       Event Type: events.metadata__product_event_type
+      Corelight Sensor: events.observer__hostname__filter
     row: 5
     col: 14
     width: 10
     height: 4
-  - name: RDP Connection Detail
-    title: RDP Connection Detail
+  - title: RDP Connection Detail
+    name: RDP Connection Detail
     model: corelight-chronicle
     explore: events
     type: looker_grid
@@ -474,16 +474,16 @@
     truncate_header: false
     minimum_column_width: 75
     series_labels:
-      events__about__labels__connecting__user.value: Connecting_User
-      events.event_timestamp_time: Timestamp
-      events.observer__hostname: system_name
-      events__principal__ip.events__principal__ip: origin_ip
-      events__target__ip.events__target__ip: id.resp_h
-      events.target__port: id.resp_p
-      events__about__labels__inferences.value: inferences
-      events__about__labels__inferences.inference_name: Name
+      events__about__labels__connecting__user.value: Connecting User
+      events.event_timestamp_time: Time
+      events.observer__hostname: Corelight Sensor
+      events__principal__ip.events__principal__ip: Source IP
+      events__target__ip.events__target__ip: Destination IP
+      events.target__port: Destination Port
+      events__about__labels__inferences.value: Inferences
+      events__about__labels__inferences.inference_name: Inferences Name
       events.external_link: Raw Logs
-      events__about__labels__auth__success.value: auth_success
+      events__about__labels__auth__success.value: Auth Success
     conditional_formatting: [{type: along a scale..., value: !!null '', background_color: "#1A73E8",
         font_color: !!null '', color_application: {collection_id: 7c56cc21-66e4-41c9-81ce-a60e1c3967b2,
           palette_id: 56d0c358-10a0-4fd6-aa0b-b117bef527ab}, bold: false, italic: false,
@@ -516,9 +516,9 @@
     defaults_version: 1
     hidden_pivots: {}
     listen:
-      System Name: events.observer__hostname__filter
       Time Range: events.event_timestamp_time
       Event Type: events.metadata__product_event_type
+      Corelight Sensor: events.observer__hostname__filter
     row: 14
     col: 0
     width: 24
@@ -553,8 +553,8 @@
     explore: events
     listens_to_filters: []
     field: events.event_timestamp_time
-  - name: System Name
-    title: System Name
+  - name: Corelight Sensor
+    title: Corelight Sensor
     type: field_filter
     default_value: ''
     allow_multiple_values: true

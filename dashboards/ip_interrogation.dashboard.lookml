@@ -102,8 +102,8 @@
     truncate_header: false
     minimum_column_width: 75
     series_labels:
-      events__principal__ip.events__principal__ip: Source
-      events__target__ip.events__target__ip: Destination
+      events__principal__ip.events__principal__ip: Source IP
+      events__target__ip.events__target__ip: Destination IP
       events.external_link: Raw Logs
       events__target__ip_geo_artifact.location__country_or_region: Country
       events__target__ip_geo_artifact.network__dns_domain: Destination Hostname
@@ -155,7 +155,7 @@
     filters:
       events.metadata__product_event_type: "-conn%,-http,-asoc:nba:event"
     sorts: [events.metadata__product_event_type]
-    limit: 50
+    limit: 10
     column_limit: 50
     value_labels: labels
     label_type: labPer
@@ -209,7 +209,7 @@
       events.metadata__product_event_type: http
       events.network__http__user_agent: "-NULL"
     sorts: [events.network__http__user_agent]
-    limit: 50
+    limit: 10
     column_limit: 50
     value_labels: legend
     label_type: labPer
@@ -263,7 +263,7 @@
       events.target__port: '80,8080,443'
       events.metadata__product_event_type: http
     sorts: [events.target_count desc 0]
-    limit: 500
+    limit: 10
     column_limit: 50
     value_labels: labels
     label_type: labPer
@@ -336,8 +336,8 @@
     truncate_header: false
     minimum_column_width: 75
     series_labels:
-      events__principal__ip.events__principal__ip: Source
-      events__target__ip.events__target__ip: Destination
+      events__principal__ip.events__principal__ip: Source IP
+      events__target__ip.events__target__ip: Destination IP
       events.network__http__method: Method
       events.target__url: URI
       events.target_ips_count: Count

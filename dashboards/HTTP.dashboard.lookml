@@ -1,9 +1,9 @@
-- dashboard: http
+- dashboard: data_exploration__http
   title: Data Exploration - HTTP
   layout: newspaper
   preferred_viewer: dashboards-next
   description: ''
-  preferred_slug: 3JhiXBKoq2XtDuaJZbDCUu
+  preferred_slug: NAHkdrL9tcGQzWJ6mUwMcd
   elements:
   - title: Top Host Headers by Count
     name: Top Host Headers by Count
@@ -39,8 +39,8 @@
     truncate_header: false
     minimum_column_width: 75
     series_labels:
-      events.host_header_http: count by unique connections
-      events.host_header_top: host_header
+      events.host_header_http: Count By Unique Connections
+      events.host_header_top: Host Header
     series_cell_visualizations:
       events.host_header_http:
         is_active: false
@@ -71,13 +71,11 @@
     totals_color: "#808080"
     defaults_version: 1
     hidden_pivots: {}
-    note_state: collapsed
-    note_display: above
-    note_text: Top Values
     listen:
       Time Range: events.event_timestamp_time
       Corelight Sensor: events.observer__hostname
-    row: 4
+      Event Type: events.product_event_type_filter
+    row: 6
     col: 0
     width: 8
     height: 6
@@ -90,7 +88,7 @@
     filters:
       events.metadata__product_event_type: http
     sorts: [events.status_msg_count desc 0]
-    limit: 500
+    limit: 10
     column_limit: 50
     filter_expression: "${events__about__labels__uid.value}=${http_group_by_uid_src_dest.conn_uids}"
     value_labels: labels
@@ -123,13 +121,11 @@
     show_silhouette: false
     totals_color: "#808080"
     defaults_version: 1
-    note_state: collapsed
-    note_display: above
-    note_text: Top Values
     listen:
       Time Range: events.event_timestamp_time
       Corelight Sensor: events.observer__hostname
-    row: 4
+      Event Type: events.product_event_type_filter
+    row: 6
     col: 8
     width: 8
     height: 6
@@ -166,20 +162,18 @@
     truncate_header: false
     minimum_column_width: 75
     series_labels:
-      events__principal__ip.events__principal__ip: id_orig_h
-      events.principal_count_http: count
+      events__principal__ip.events__principal__ip: Source IP
+      events.principal_count_http: Count
     series_cell_visualizations:
       events.principal_count_http:
         is_active: false
     defaults_version: 1
     hidden_pivots: {}
-    note_state: collapsed
-    note_display: above
-    note_text: Top Values
     listen:
       Time Range: events.event_timestamp_time
       Corelight Sensor: events.observer__hostname
-    row: 4
+      Event Type: events.product_event_type_filter
+    row: 6
     col: 16
     width: 8
     height: 6
@@ -207,18 +201,16 @@
     conditional_formatting_include_totals: false
     conditional_formatting_include_nulls: false
     series_labels:
-      events.agent_count_http: count by unique connections
-      events.agent_count_percent_http: percent
-      events.http_user_agent_rare: http_user_agent
+      events.agent_count_http: Count By Unique Connections
+      events.agent_count_percent_http: Percent
+      events.http_user_agent_rare: HTTP User Agent
     truncate_text: false
     defaults_version: 1
-    note_state: collapsed
-    note_display: above
-    note_text: Top Values
     listen:
       Time Range: events.event_timestamp_time
       Corelight Sensor: events.observer__hostname
-    row: 10
+      Event Type: events.product_event_type_filter
+    row: 12
     col: 0
     width: 14
     height: 6
@@ -256,9 +248,9 @@
     truncate_header: false
     minimum_column_width: 75
     series_labels:
-      events.rare_host_header_http: count by unique connections
-      events.rare_host_header_http_percent: percent
-      events.host_header_rare: host_header
+      events.rare_host_header_http: Count By Unique Connections
+      events.rare_host_header_http_percent: Percent
+      events.host_header_rare: Host Header
     series_cell_visualizations:
       events.rare_host_header_http:
         is_active: false
@@ -289,13 +281,11 @@
     totals_color: "#808080"
     defaults_version: 1
     hidden_pivots: {}
-    note_state: collapsed
-    note_display: above
-    note_text: Top Values
     listen:
       Time Range: events.event_timestamp_time
       Corelight Sensor: events.observer__hostname
-    row: 10
+      Event Type: events.product_event_type_filter
+    row: 12
     col: 14
     width: 10
     height: 6
@@ -311,7 +301,7 @@
       events.network__http__response_code__string: "-NULL"
       events.host_header_status: "-NULL"
     sorts: [events.http_status_code_host_count desc]
-    limit: 500
+    limit: 5000
     column_limit: 50
     filter_expression: "${events__about__labels__uid.value}=${http_group_by_uid_src_dest.conn_uids}"
     show_view_names: false
@@ -335,10 +325,10 @@
     truncate_header: false
     minimum_column_width: 75
     series_labels:
-      events__about__labels__status__msg.value: status_msg
-      events.http_status_code_host_count: count by unique connections
-      events.network__http__response_code__string: status_code
-      events.host_header_status: host_header
+      events__about__labels__status__msg.value: Status Message
+      events.http_status_code_host_count: Count By Unique Connections
+      events.network__http__response_code__string: Status Code
+      events.host_header_status: Host Header
     series_cell_visualizations:
       events.http_status_code_host_count:
         is_active: false
@@ -369,14 +359,12 @@
     totals_color: "#808080"
     defaults_version: 1
     hidden_pivots: {}
-    note_state: collapsed
-    note_display: above
-    note_text: Details
     listen:
       Time Range: events.event_timestamp_time
       Corelight Sensor: events.observer__hostname
       HTTP Status  (For Host Breakdown By HTTP Status): events.network__http__response_code__filter
-    row: 16
+      Event Type: events.product_event_type_filter
+    row: 20
     col: 13
     width: 11
     height: 6
@@ -390,7 +378,7 @@
       events.metadata__product_event_type: http
       events.host_header_method: "-NULL"
     sorts: [events.http_method_host_count desc]
-    limit: 500
+    limit: 5000
     column_limit: 50
     filter_expression: "${events__about__labels__uid.value}=${http_group_by_uid_src_dest.conn_uids}"
     show_view_names: false
@@ -414,7 +402,8 @@
     truncate_header: false
     minimum_column_width: 75
     series_labels:
-      events.http_method_host_count: count by unique connections
+      events.host_header_method: Host Header
+      events.http_method_host_count: Count By Unique Connections
     series_cell_visualizations:
       events.http_method_host_count:
         is_active: false
@@ -445,14 +434,12 @@
     totals_color: "#808080"
     defaults_version: 1
     hidden_pivots: {}
-    note_state: collapsed
-    note_display: above
-    note_text: Details
     listen:
       Time Range: events.event_timestamp_time
       Corelight Sensor: events.observer__hostname
       HTTP Method (Host Breakdown By HTTP Method): events.network__http__method
-    row: 16
+      Event Type: events.product_event_type_filter
+    row: 20
     col: 0
     width: 13
     height: 6
@@ -477,15 +464,11 @@
     conditional_formatting_include_totals: false
     conditional_formatting_include_nulls: false
     defaults_version: 1
-    note_state: collapsed
-    note_display: above
-    note_text: 'Top Values
-
-      '
     listen:
       Time Range: events.event_timestamp_time
       Corelight Sensor: events.observer__hostname
-    row: 0
+      Event Type: events.product_event_type_filter
+    row: 2
     col: 0
     width: 8
     height: 2
@@ -510,13 +493,11 @@
     conditional_formatting_include_totals: false
     conditional_formatting_include_nulls: false
     defaults_version: 1
-    note_state: collapsed
-    note_display: above
-    note_text: Top Values
     listen:
       Time Range: events.event_timestamp_time
       Corelight Sensor: events.observer__hostname
-    row: 0
+      Event Type: events.product_event_type_filter
+    row: 2
     col: 16
     width: 8
     height: 2
@@ -541,13 +522,11 @@
     conditional_formatting_include_totals: false
     conditional_formatting_include_nulls: false
     defaults_version: 1
-    note_state: collapsed
-    note_display: above
-    note_text: Top Values
     listen:
       Time Range: events.event_timestamp_time
       Corelight Sensor: events.observer__hostname
-    row: 0
+      Event Type: events.product_event_type_filter
+    row: 2
     col: 8
     width: 8
     height: 2
@@ -572,13 +551,11 @@
     conditional_formatting_include_totals: false
     conditional_formatting_include_nulls: false
     defaults_version: 1
-    note_state: collapsed
-    note_display: above
-    note_text: Top Values
     listen:
       Time Range: events.event_timestamp_time
       Corelight Sensor: events.observer__hostname
-    row: 2
+      Event Type: events.product_event_type_filter
+    row: 4
     col: 0
     width: 8
     height: 2
@@ -604,13 +581,11 @@
     conditional_formatting_include_nulls: false
     show_view_names: false
     defaults_version: 1
-    note_state: collapsed
-    note_display: above
-    note_text: Top Values
     listen:
       Time Range: events.event_timestamp_time
       Corelight Sensor: events.observer__hostname
-    row: 2
+      Event Type: events.product_event_type_filter
+    row: 4
     col: 8
     width: 8
     height: 2
@@ -636,17 +611,51 @@
     conditional_formatting_include_nulls: false
     show_view_names: false
     defaults_version: 1
-    note_state: collapsed
-    note_display: above
-    note_text: Top Values
     listen:
       Time Range: events.event_timestamp_time
       Corelight Sensor: events.observer__hostname
-    row: 2
+      Event Type: events.product_event_type_filter
+    row: 4
     col: 16
     width: 8
     height: 2
+  - name: ''
+    type: text
+    title_text: ''
+    subtitle_text: ''
+    body_text: '[{"type":"h1","children":[{"text":"Top Values"}],"align":"center"}]'
+    rich_content_json: '{"format":"slate"}'
+    row: 0
+    col: 0
+    width: 24
+    height: 2
+  - name: " (Copy)"
+    type: text
+    title_text: " (Copy)"
+    subtitle_text: ''
+    body_text: '[{"type":"h1","children":[{"text":"Details"}],"align":"center"}]'
+    rich_content_json: '{"format":"slate"}'
+    row: 18
+    col: 0
+    width: 24
+    height: 2
   filters:
+  - name: Event Type
+    title: Event Type
+    type: field_filter
+    default_value: http,conn
+    allow_multiple_values: true
+    required: true
+    ui_config:
+      type: tag_list
+      display: popover
+      options:
+      - http
+      - conn
+    model: corelight-chronicle
+    explore: events
+    listens_to_filters: []
+    field: events.product_event_type_filter
   - name: Time Range
     title: Time Range
     type: field_filter
@@ -668,24 +677,24 @@
     allow_multiple_values: true
     required: false
     ui_config:
-      type: tag_list
-      display: popover
+      type: dropdown_menu
+      display: inline
     model: corelight-chronicle
     explore: events
-    listens_to_filters: []
+    listens_to_filters: [Event Type]
     field: events.observer__hostname
-  - name: HTTP Method (Host Breakdown By HTTP Method)
-    title: HTTP Method (Host Breakdown By HTTP Method)
+  - name: HTTP Method (For Host Breakdown By HTTP Method)
+    title: HTTP Method (For Host Breakdown By HTTP Method)
     type: field_filter
     default_value: ''
     allow_multiple_values: true
     required: false
     ui_config:
-      type: tag_list
-      display: popover
+      type: dropdown_menu
+      display: inline
     model: corelight-chronicle
     explore: events
-    listens_to_filters: []
+    listens_to_filters: [Event Type]
     field: events.network__http__method
   - name: HTTP Status  (For Host Breakdown By HTTP Status)
     title: HTTP Status  (For Host Breakdown By HTTP Status)
@@ -694,9 +703,9 @@
     allow_multiple_values: true
     required: false
     ui_config:
-      type: tag_list
-      display: popover
+      type: dropdown_menu
+      display: inline
     model: corelight-chronicle
     explore: events
-    listens_to_filters: []
+    listens_to_filters: [Event Type]
     field: events.network__http__response_code__filter

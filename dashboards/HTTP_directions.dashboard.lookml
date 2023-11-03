@@ -13,7 +13,7 @@
     fields: [events.distinct_hosts_outbound]
     filters:
       events.metadata__product_event_type: http
-    limit: 500
+    limit: 5000
     column_limit: 50
     filter_expression: "(${events__about__labels__uid__only.value} = ${conn_events_search_derived_outbound.conn_uids})\
       \ AND (${events__about__labels__uid.value}=${http_group_by_uid_src_dest.conn_uids})"
@@ -27,9 +27,6 @@
     conditional_formatting_include_totals: false
     conditional_formatting_include_nulls: false
     defaults_version: 1
-    note_state: collapsed
-    note_display: above
-    note_text: Directions
     listen:
       Time Range: events.event_timestamp_time
       Corelight Sensor: events.observer__hostname
@@ -48,7 +45,7 @@
       events.metadata__product_event_type: http
       events.local_host_outbound: "-NULL"
     sorts: [events.host_header_http_direction desc 0]
-    limit: 500
+    limit: 5000
     column_limit: 50
     filter_expression: "(${events__about__labels__uid__only.value}=${conn_events_search_derived_outbound.conn_uids})\
       \ AND (${events__about__labels__uid.value}=${http_group_by_uid_src_dest.conn_uids})"
@@ -73,8 +70,8 @@
     truncate_header: false
     minimum_column_width: 75
     series_labels:
-      events.host_header_http_direction: count by unique connections
-      events.local_host_outbound: host_header
+      events.host_header_http_direction: Count By Unique Connections
+      events.local_host_outbound: Host Header
     series_cell_visualizations:
       events.host_header_http_direction:
         is_active: false
@@ -86,9 +83,6 @@
     show_comparison_label: true
     defaults_version: 1
     hidden_pivots: {}
-    note_state: collapsed
-    note_display: above
-    note_text: Directions
     listen:
       Time Range: events.event_timestamp_time
       Corelight Sensor: events.observer__hostname
@@ -106,7 +100,7 @@
     filters:
       events.target__hostname: "-NULL"
     sorts: [events.distinct_hosts_inbound desc 0]
-    limit: 500
+    limit: 5000
     column_limit: 50
     dynamic_fields:
     - category: table_calculation
@@ -152,9 +146,6 @@
     hide_totals: false
     hide_row_totals: false
     hidden_pivots: {}
-    note_state: collapsed
-    note_display: above
-    note_text: Directions
     listen:
       Time Range: events.event_timestamp_time
       Corelight Sensor: events.observer__hostname
@@ -173,7 +164,7 @@
       events.metadata__product_event_type: http
       events.local_host_inbound: "-NULL"
     sorts: [events.host_header_http_direction desc 0]
-    limit: 500
+    limit: 5000
     column_limit: 50
     filter_expression: "(${events__about__labels__uid__only.value}=${conn_events_search_derived.conn_uids})\
       \ AND (${events__about__labels__uid.value}=${http_group_by_uid_src_dest.conn_uids})"
@@ -198,8 +189,8 @@
     truncate_header: false
     minimum_column_width: 75
     series_labels:
-      events.host_header_http_direction: count by unique connections
-      events.local_host_inbound: host_header
+      events.host_header_http_direction: Count By Unique Connections
+      events.local_host_inbound: Host Header
     series_cell_visualizations:
       events.host_header_http_direction:
         is_active: false
@@ -229,9 +220,6 @@
     show_silhouette: false
     totals_color: "#808080"
     defaults_version: 1
-    note_state: collapsed
-    note_display: above
-    note_text: Directions
     listen:
       Time Range: events.event_timestamp_time
       Corelight Sensor: events.observer__hostname
@@ -250,7 +238,7 @@
       events.metadata__product_event_type: http
       events.http_user_agent_outbound: "-NULL"
     sorts: [events.agent_count_http_direction desc 0]
-    limit: 500
+    limit: 5000
     column_limit: 50
     filter_expression: "(${events__about__labels__uid__only.value}=${conn_events_search_derived_outbound.conn_uids})\
       \ AND (${events__about__labels__uid.value}=${http_group_by_uid_src_dest.conn_uids})"
@@ -275,8 +263,8 @@
     truncate_header: false
     minimum_column_width: 75
     series_labels:
-      events.http_user_agent_outbound: user_agent
-      events.agent_count_http_direction: count by unique connections
+      events.http_user_agent_outbound: User Agent
+      events.agent_count_http_direction: Count By Unique Connections
     series_cell_visualizations:
       events.agent_count_http_direction:
         is_active: false
@@ -306,9 +294,6 @@
     show_silhouette: false
     totals_color: "#808080"
     defaults_version: 1
-    note_state: collapsed
-    note_display: above
-    note_text: Directions
     listen:
       Time Range: events.event_timestamp_time
       Corelight Sensor: events.observer__hostname
@@ -327,7 +312,7 @@
       events.metadata__product_event_type: http
       events.http_user_agent_inbound: "-NULL"
     sorts: [events.agent_count_http_direction desc 0]
-    limit: 500
+    limit: 5000
     column_limit: 50
     filter_expression: "(${events__about__labels__uid__only.value} = ${conn_events_search_derived.conn_uids})\
       \ AND (${events__about__labels__uid.value}=${http_group_by_uid_src_dest.conn_uids})"
@@ -352,8 +337,8 @@
     truncate_header: false
     minimum_column_width: 75
     series_labels:
-      events.agent_count_http_direction: count by unique connections
-      events.http_user_agent_inbound: user_agent
+      events.agent_count_http_direction: Count By Unique Connections
+      events.http_user_agent_inbound: User Agent
     series_cell_visualizations:
       events.agent_count_http_direction:
         is_active: false
@@ -383,9 +368,6 @@
     show_silhouette: false
     totals_color: "#808080"
     defaults_version: 1
-    note_state: collapsed
-    note_display: above
-    note_text: Directions
     listen:
       Time Range: events.event_timestamp_time
       Corelight Sensor: events.observer__hostname
@@ -402,7 +384,7 @@
     allow_multiple_values: true
     required: true
     ui_config:
-      type: tag_list
+      type: dropdown_menu
       display: popover
       options:
       - http
@@ -431,7 +413,7 @@
     allow_multiple_values: true
     required: false
     ui_config:
-      type: tag_list
+      type: dropdown_menu
       display: popover
     model: corelight-chronicle
     explore: events

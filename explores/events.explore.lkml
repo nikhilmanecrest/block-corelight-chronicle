@@ -163,6 +163,368 @@ explore: events {
     sql: LEFT JOIN UNNEST(${events__about.labels}) as events__about__labels ;;
     relationship: one_to_many
   }
+  #Rates
+  join: events__about__labels__logs__conn {
+    view_label: "Events: About Labels Logs Conn"
+    sql: LEFT JOIN UNNEST(${events__about.labels}) as events__about__labels__logs__conn ON ${events__about__labels__logs__conn.key} = 'logs_conn_entries_per_second' ;;
+    fields: [events__about__labels__logs__conn.value]
+    relationship: one_to_many
+  }
+  #Rates
+  join: events__about__labels__logs__dce_rpc {
+    view_label: "Events: About Labels Logs DCE RPC"
+    sql: LEFT JOIN UNNEST(${events__about.labels}) as events__about__labels__logs__dce_rpc ON ${events__about__labels__logs__dce_rpc.key} = 'logs_dce_rpc_entries_per_second' ;;
+    fields: [events__about__labels__logs__dce_rpc.value]
+    relationship: one_to_many
+  }
+  #Rates
+  join: events__about__labels__logs__dhcp {
+    view_label: "Events: About Labels Logs DHCP"
+    sql: LEFT JOIN UNNEST(${events__about.labels}) as events__about__labels__logs__dhcp ON ${events__about__labels__logs__dhcp.key} = 'logs_dhcp_entries_per_second' ;;
+    fields: [events__about__labels__logs__dhcp.value]
+    relationship: one_to_many
+  }
+  #Rates
+  join: events__about__labels__logs__dnp3 {
+    view_label: "Events: About Labels Logs DNP3"
+    sql: LEFT JOIN UNNEST(${events__about.labels}) as events__about__labels__logs__dnp3 ON ${events__about__labels__logs__dnp3.key} = 'logs_dnp3_entries_per_second' ;;
+    fields: [events__about__labels__logs__dnp3.value]
+    relationship: one_to_many
+  }
+  #Rates
+  join: events__about__labels__logs__dns {
+    view_label: "Events: About Labels Logs DNS"
+    sql: LEFT JOIN UNNEST(${events__about.labels}) as events__about__labels__logs__dns ON ${events__about__labels__logs__dns.key} = 'logs_dns_entries_per_second' ;;
+    fields: [events__about__labels__logs__dns.value]
+    relationship: one_to_many
+  }
+  #Rates
+  join: events__about__labels__logs__dpd {
+    view_label: "Events: About Labels Logs DPD"
+    sql: LEFT JOIN UNNEST(${events__about.labels}) as events__about__labels__logs__dpd ON ${events__about__labels__logs__dpd.key} = 'logs_dpd_entries_per_second' ;;
+    fields: [events__about__labels__logs__dpd.value]
+    relationship: one_to_many
+  }
+  #Rates
+  join: events__about__labels__logs__files {
+    view_label: "Events: About Labels Logs Files"
+    sql: LEFT JOIN UNNEST(${events__about.labels}) as events__about__labels__logs__files ON ${events__about__labels__logs__files.key} = 'logs_files_entries_per_second' ;;
+    fields: [events__about__labels__logs__files.value]
+    relationship: one_to_many
+  }
+  #Rates
+  join: events__about__labels__logs__ftp {
+    view_label: "Events: About Labels Logs FTP"
+    sql: LEFT JOIN UNNEST(${events__about.labels}) as events__about__labels__logs__ftp ON ${events__about__labels__logs__ftp.key} = 'logs_ftp_entries_per_second' ;;
+    fields: [events__about__labels__logs__ftp.value]
+    relationship: one_to_many
+  }
+  #Rates
+  join: events__about__labels__logs__http {
+    view_label: "Events: About Labels Logs HTTP"
+    sql: LEFT JOIN UNNEST(${events__about.labels}) as events__about__labels__logs__http ON ${events__about__labels__logs__http.key} = 'logs_http_entries_per_second' ;;
+    fields: [events__about__labels__logs__http.value]
+    relationship: one_to_many
+  }
+  #Rates
+  join: events__about__labels__logs__irc {
+    view_label: "Events: About Labels Logs IRC"
+    sql: LEFT JOIN UNNEST(${events__about.labels}) as events__about__labels__logs__irc ON ${events__about__labels__logs__irc.key} = 'logs_irc_entries_per_second' ;;
+    fields: [events__about__labels__logs__irc.value]
+    relationship: one_to_many
+  }
+  #Rates
+  join: events__about__labels__logs__kerberos {
+    view_label: "Events: About Labels Logs Kerberos"
+    sql: LEFT JOIN UNNEST(${events__about.labels}) as events__about__labels__logs__kerberos ON ${events__about__labels__logs__kerberos.key} = 'logs_kerberos_entries_per_second' ;;
+    fields: [events__about__labels__logs__kerberos.value]
+    relationship: one_to_many
+  }
+  #Rates
+  join: events__about__labels__logs__modbus {
+    view_label: "Events: About Labels Logs Modbus"
+    sql: LEFT JOIN UNNEST(${events__about.labels}) as events__about__labels__logs__modbus ON ${events__about__labels__logs__modbus.key} = 'logs_modbus_entries_per_second' ;;
+    fields: [events__about__labels__logs__modbus.value]
+    relationship: one_to_many
+  }
+  #Rates
+  join: events__about__labels__logs__mysql {
+    view_label: "Events: About Labels Logs MYSQL"
+    sql: LEFT JOIN UNNEST(${events__about.labels}) as events__about__labels__logs__mysql ON ${events__about__labels__logs__mysql.key} = 'logs_mysql_entries_per_second' ;;
+    fields: [events__about__labels__logs__mysql.value]
+    relationship: one_to_many
+  }
+  #Rates
+  join: events__about__labels__logs__ntlm {
+    view_label: "Events: About Labels Logs NTLM"
+    sql: LEFT JOIN UNNEST(${events__about.labels}) as events__about__labels__logs__ntlm ON ${events__about__labels__logs__ntlm.key} = 'logs_ntlm_entries_per_second' ;;
+    fields: [events__about__labels__logs__ntlm.value]
+    relationship: one_to_many
+  }
+  #Rates
+  join: events__about__labels__logs__pe {
+    view_label: "Events: About Labels Logs PE"
+    sql: LEFT JOIN UNNEST(${events__about.labels}) as events__about__labels__logs__pe ON ${events__about__labels__logs__pe.key} = 'logs_pe_entries_per_second' ;;
+    fields: [events__about__labels__logs__pe.value]
+    relationship: one_to_many
+  }
+  #Rates
+  join: events__about__labels__logs__radius {
+    view_label: "Events: About Labels Logs Radius"
+    sql: LEFT JOIN UNNEST(${events__about.labels}) as events__about__labels__logs__radius ON ${events__about__labels__logs__radius.key} = 'logs_radius_entries_per_second' ;;
+    fields: [events__about__labels__logs__radius.value]
+    relationship: one_to_many
+  }
+  #Rates
+  join: events__about__labels__logs__rdp {
+    view_label: "Events: About Labels Logs RDP"
+    sql: LEFT JOIN UNNEST(${events__about.labels}) as events__about__labels__logs__rdp ON ${events__about__labels__logs__rdp.key} = 'logs_rdp_entries_per_second' ;;
+    fields: [events__about__labels__logs__rdp.value]
+    relationship: one_to_many
+  }
+  #Rates
+  join: events__about__labels__logs__rfb {
+    view_label: "Events: About Labels Logs RFB"
+    sql: LEFT JOIN UNNEST(${events__about.labels}) as events__about__labels__logs__rfb ON ${events__about__labels__logs__rfb.key} = 'logs_rfb_entries_per_second' ;;
+    fields: [events__about__labels__logs__rfb.value]
+    relationship: one_to_many
+  }
+  #Rates
+  join: events__about__labels__logs__sip {
+    view_label: "Events: About Labels Logs SIP"
+    sql: LEFT JOIN UNNEST(${events__about.labels}) as events__about__labels__logs__sip ON ${events__about__labels__logs__sip.key} = 'logs_sip_entries_per_second' ;;
+    fields: [events__about__labels__logs__sip.value]
+    relationship: one_to_many
+  }
+  #Rates
+  join: events__about__labels__logs__smb_files {
+    view_label: "Events: About Labels Logs SMB Files"
+    sql: LEFT JOIN UNNEST(${events__about.labels}) as events__about__labels__logs__smb_files ON ${events__about__labels__logs__smb_files.key} = 'logs_smb_files_entries_per_second' ;;
+    fields: [events__about__labels__logs__smb_files.value]
+    relationship: one_to_many
+  }
+  #Rates
+  join: events__about__labels__logs__smb_mapping {
+    view_label: "Events: About Labels Logs SMB Mapping"
+    sql: LEFT JOIN UNNEST(${events__about.labels}) as events__about__labels__logs__smb_mapping ON ${events__about__labels__logs__smb_mapping.key} = 'logs_smb_mapping_entries_per_second' ;;
+    fields: [events__about__labels__logs__smb_mapping.value]
+    relationship: one_to_many
+  }
+  #Rates
+  join: events__about__labels__logs__smtp {
+    view_label: "Events: About Labels Logs SMTP"
+    sql: LEFT JOIN UNNEST(${events__about.labels}) as events__about__labels__logs__smtp ON ${events__about__labels__logs__smtp.key} = 'logs_smtp_entries_per_second' ;;
+    fields: [events__about__labels__logs__smtp.value]
+    relationship: one_to_many
+  }
+  #Rates
+  join: events__about__labels__logs__snmp {
+    view_label: "Events: About Labels Logs SNMP"
+    sql: LEFT JOIN UNNEST(${events__about.labels}) as events__about__labels__logs__snmp ON ${events__about__labels__logs__snmp.key} = 'logs_snmp_entries_per_second' ;;
+    fields: [events__about__labels__logs__snmp.value]
+    relationship: one_to_many
+  }
+  #Rates
+  join: events__about__labels__logs__socks {
+    view_label: "Events: About Labels Logs SOCKS"
+    sql: LEFT JOIN UNNEST(${events__about.labels}) as events__about__labels__logs__socks ON ${events__about__labels__logs__socks.key} = 'logs_socks_entries_per_second' ;;
+    fields: [events__about__labels__logs__socks.value]
+    relationship: one_to_many
+  }
+  #Rates
+  join: events__about__labels__logs__software {
+    view_label: "Events: About Labels Logs Software"
+    sql: LEFT JOIN UNNEST(${events__about.labels}) as events__about__labels__logs__software ON ${events__about__labels__logs__software.key} = 'logs_software_entries_per_second' ;;
+    fields: [events__about__labels__logs__software.value]
+    relationship: one_to_many
+  }
+  #Rates
+  join: events__about__labels__logs__ssh {
+    view_label: "Events: About Labels Logs SSH"
+    sql: LEFT JOIN UNNEST(${events__about.labels}) as events__about__labels__logs__ssh ON ${events__about__labels__logs__ssh.key} = 'logs_ssh_entries_per_second' ;;
+    fields: [events__about__labels__logs__ssh.value]
+    relationship: one_to_many
+  }
+  #Rates
+  join: events__about__labels__logs__ssl {
+    view_label: "Events: About Labels Logs SSL"
+    sql: LEFT JOIN UNNEST(${events__about.labels}) as events__about__labels__logs__ssl ON ${events__about__labels__logs__ssl.key} = 'logs_ssl_entries_per_second' ;;
+    fields: [events__about__labels__logs__ssl.value]
+    relationship: one_to_many
+  }
+  #Rates
+  join: events__about__labels__logs__syslog {
+    view_label: "Events: About Labels Logs Syslog"
+    sql: LEFT JOIN UNNEST(${events__about.labels}) as events__about__labels__logs__syslog ON ${events__about__labels__logs__syslog.key} = 'logs_syslog_entries_per_second' ;;
+    fields: [events__about__labels__logs__syslog.value]
+    relationship: one_to_many
+  }
+  #Rates
+  join: events__about__labels__logs__traceroute {
+    view_label: "Events: About Labels Logs Traceroute"
+    sql: LEFT JOIN UNNEST(${events__about.labels}) as events__about__labels__logs__traceroute ON ${events__about__labels__logs__traceroute.key} = 'logs_traceroute_entries_per_second' ;;
+    fields: [events__about__labels__logs__traceroute.value]
+    relationship: one_to_many
+  }
+  #Rates
+  join: events__about__labels__logs__tunnel {
+    view_label: "Events: About Labels Logs Tunnel"
+    sql: LEFT JOIN UNNEST(${events__about.labels}) as events__about__labels__logs__tunnel ON ${events__about__labels__logs__tunnel.key} = 'logs_tunnel_entries_per_second' ;;
+    fields: [events__about__labels__logs__tunnel.value]
+    relationship: one_to_many
+  }
+  #Rates
+  join: events__about__labels__logs__weird {
+    view_label: "Events: About Labels Logs Weird"
+    sql: LEFT JOIN UNNEST(${events__about.labels}) as events__about__labels__logs__weird ON ${events__about__labels__logs__weird.key} = 'logs_weird_entries_per_second' ;;
+    fields: [events__about__labels__logs__weird.value]
+    relationship: one_to_many
+  }
+  #Rates
+  join: events__about__labels__logs__x509 {
+    view_label: "Events: About Labels Logs X509"
+    sql: LEFT JOIN UNNEST(${events__about.labels}) as events__about__labels__logs__x509 ON ${events__about__labels__logs__x509.key} = 'logs_x509_entries_per_second' ;;
+    fields: [events__about__labels__logs__x509.value]
+    relationship: one_to_many
+  }
+  #Rates3
+  join: events__about__labels__total_mbps {
+    view_label: "Events: About Labels Logs Total Mbps"
+    sql: LEFT JOIN UNNEST(${events__about.labels}) as events__about__labels__total_mbps ON ${events__about__labels__total_mbps.key} = 'monitor_total_mbps' ;;
+    fields: [events__about__labels__total_mbps.value]
+    relationship: one_to_many
+  }
+  #Rates
+  join: events__about__labels__total_kpps {
+    view_label: "Events: About Labels Total Kpps"
+    sql: LEFT JOIN UNNEST(${events__about.labels}) as events__about__labels__total_kpps ON ${events__about__labels__total_kpps.key} = 'monitor_total_kpps' ;;
+    fields: [events__about__labels__total_kpps.value]
+    relationship: one_to_many
+  }
+  #Rates
+  join: events__about__labels__total_drops_kpps {
+    view_label: "Events: About Labels Total Drops Kpps"
+    sql: LEFT JOIN UNNEST(${events__about.labels}) as events__about__labels__total_drops_kpps ON ${events__about__labels__total_drops_kpps.key} = 'monitor_total_drops_kpps' ;;
+    fields: [events__about__labels__total_drops_kpps.value]
+    relationship: one_to_many
+  }
+  #Rates
+  join: events__about__labels__in_bytes_mbps {
+    view_label: "Events: About Labels In Bytes mbps"
+    sql: LEFT JOIN UNNEST(${events__about.labels}) as events__about__labels__in_bytes_mbps ON ${events__about__labels__in_bytes_mbps.key} = 'mgmt_in_bytes_mbps' ;;
+    fields: [events__about__labels__in_bytes_mbps.value]
+    relationship: one_to_many
+  }
+  #Rates
+  join: events__about__labels__out_bytes_mbps {
+    view_label: "Events: About Labels Out Bytes Mbps"
+    sql: LEFT JOIN UNNEST(${events__about.labels}) as events__about__labels__out_bytes_mbps ON ${events__about__labels__out_bytes_mbps.key} = 'mgmt_out_bytes_mbps' ;;
+    fields: [events__about__labels__out_bytes_mbps.value]
+    relationship: one_to_many
+  }
+  #Rates
+  join: events__about__labels__in_packets_kpps {
+    view_label: "Events: About Labels In Packets Kpps"
+    sql: LEFT JOIN UNNEST(${events__about.labels}) as events__about__labels__in_packets_kpps ON ${events__about__labels__in_packets_kpps.key} = 'mgmt_in_packets_kpps' ;;
+    fields: [events__about__labels__in_packets_kpps.value]
+    relationship: one_to_many
+  }
+  #Rates3
+  join: events__about__labels__out_packets_kpps {
+    view_label: "Events: About Labels Out Packets Kpps"
+    sql: LEFT JOIN UNNEST(${events__about.labels}) as events__about__labels__out_packets_kpps ON ${events__about__labels__out_packets_kpps.key} = 'mgmt_out_packets_kpps' ;;
+    fields: [events__about__labels__out_packets_kpps.value]
+    relationship: one_to_many
+  }
+  #Rates
+  join: events__about__labels__files_total {
+    view_label: "Events: About Labels Files Total"
+    sql: LEFT JOIN UNNEST(${events__about.labels}) as events__about__labels__files_total ON ${events__about__labels__files_total.key} = 'files_total' ;;
+    fields: [events__about__labels__files_total.value]
+    relationship: one_to_many
+  }
+  #Rates
+  join: events__about__labels__files_sftp {
+    view_label: "Events: About Labels Files Queued SFTP"
+    sql: LEFT JOIN UNNEST(${events__about.labels}) as events__about__labels__files_sftp ON ${events__about__labels__files_sftp.key} = 'files_queued_sftp' ;;
+    fields: [events__about__labels__files_sftp.value]
+    relationship: one_to_many
+  }
+  #Rates
+  join: events__about__labels__files_s3 {
+    view_label: "Events: About Labels Files S3"
+    sql: LEFT JOIN UNNEST(${events__about.labels}) as events__about__labels__files_s3 ON ${events__about__labels__files_s3.key} = 'files_queued_s3' ;;
+    fields: [events__about__labels__files_s3.value]
+    relationship: one_to_many
+  }
+  #Rates
+  join: events__about__labels__export_splunk {
+    view_label: "Events: About Labels Export Splunk"
+    sql: LEFT JOIN UNNEST(${events__about.labels}) as events__about__labels__export_splunk ON ${events__about__labels__export_splunk.key} = 'logs_splunk_export_lag' ;;
+    fields: [events__about__labels__export_splunk.value]
+    relationship: one_to_many
+  }
+  #Rates
+  join: events__about__labels__export_syslog {
+    view_label: "Events: About Labels Export Syslog"
+    sql: LEFT JOIN UNNEST(${events__about.labels}) as events__about__labels__export_syslog ON ${events__about__labels__export_syslog.key} = 'logs_syslog_export_lag' ;;
+    fields: [events__about__labels__export_syslog.value]
+    relationship: one_to_many
+  }
+  #Rates
+  join: events__about__labels__export_json {
+    view_label: "Events: About Labels Export JSON"
+    sql: LEFT JOIN UNNEST(${events__about.labels}) as events__about__labels__export_json ON ${events__about__labels__export_json.key} = 'logs_json_export_lag' ;;
+    fields: [events__about__labels__export_json.value]
+    relationship: one_to_many
+  }
+  #Rates
+  join: events__about__labels__export_kafka {
+    view_label: "Events: About Labels Export Kafka"
+    sql: LEFT JOIN UNNEST(${events__about.labels}) as events__about__labels__export_kafka ON ${events__about__labels__export_kafka.key} = 'logs_kafka_export_lag' ;;
+    fields: [events__about__labels__export_kafka.value]
+    relationship: one_to_many
+  }
+  #Rates
+  join: events__about__labels__export_investigator {
+    view_label: "Events: About Labels Export Investigator"
+    sql: LEFT JOIN UNNEST(${events__about.labels}) as events__about__labels__export_investigator ON ${events__about__labels__export_investigator.key} = 'logs_investigator_export_lag' ;;
+    fields: [events__about__labels__export_investigator.value]
+    relationship: one_to_many
+  }
+  #Rates
+  join: events__about__labels__export_kinesis {
+    view_label: "Events: About Labels Export Kinesis"
+    sql: LEFT JOIN UNNEST(${events__about.labels}) as events__about__labels__export_kinesis ON ${events__about__labels__export_kinesis.key} = 'logs_kinesis_export_lag' ;;
+    fields: [events__about__labels__export_kinesis.value]
+    relationship: one_to_many
+  }
+  #Rates
+  join: events__about__labels__export_hec {
+    view_label: "Events: About Labels Export HEC"
+    sql: LEFT JOIN UNNEST(${events__about.labels}) as events__about__labels__export_hec ON ${events__about__labels__export_hec.key} = 'logs_hec_export_lag' ;;
+    fields: [events__about__labels__export_hec.value]
+    relationship: one_to_many
+  }
+  #Rates
+  join: events__about__labels__export_elasticsearch {
+    view_label: "Events: About Labels Export Elasticsearch"
+    sql: LEFT JOIN UNNEST(${events__about.labels}) as events__about__labels__export_elasticsearch ON ${events__about__labels__export_elasticsearch.key} = 'logs_elasticsearch_export_lag' ;;
+    fields: [events__about__labels__export_elasticsearch.value]
+    relationship: one_to_many
+  }
+  # Sersor Overview -> System
+  join: events__about__labels__disk_usage_os {
+    view_label: "Events: About Labels Disk Usage os"
+    sql: LEFT JOIN UNNEST(${events__about.labels}) as events__about__labels__disk_usage_os ON ${events__about__labels__disk_usage_os.key} = 'usage_os' ;;
+    relationship: one_to_many
+  }
+  join: events__about__labels__disk_usage_data {
+    view_label: "Events: About Labels Disk Usage data"
+    sql: LEFT JOIN UNNEST(${events__about.labels}) as events__about__labels__disk_usage_data  ON ${events__about__labels__disk_usage_data.key} = "usage_data";;
+    relationship: one_to_many
+  }
+  
   join: events__about__labels__service {
     view_label: "Events: About Labels Services"
     sql: LEFT JOIN UNNEST(${events__about.labels}) as events__about__labels__service ON ${events__about__labels__service.key} = 'service' ;;
@@ -187,6 +549,97 @@ explore: events {
     view_label: "Events: About Labels Rcode Name"
     sql: LEFT JOIN UNNEST(${events__about.labels}) as events__about__labels__rcode_name ON ${events__about__labels__rcode_name.key} = 'rcode_name' ;;
     fields: [events__about__labels__rcode_name.value, events__about__labels__rcode_name.value_for_filter]
+    relationship: one_to_many
+  }
+  #zeek-doctor
+  join: events__about__labels__dns_half_duplex_orig {
+    view_label: "Events: About Labels DNS Half Duplex Orig "
+    sql: LEFT JOIN UNNEST(${events__about.labels}) as events__about__labels__dns_half_duplex_orig ON ${events__about__labels__dns_half_duplex_orig.key} = 'check_dns_half_duplex_orig_percent' ;;
+    fields: [events__about__labels__dns_half_duplex_orig.value]
+    relationship: one_to_many
+  }
+  #zeek-doctor
+  join: events__about__labels__dns_half_duplex_resp{
+    view_label: "Events: About Labels DNS Half Duplex Resp "
+    sql: LEFT JOIN UNNEST(${events__about.labels}) as events__about__labels__dns_half_duplex_resp ON ${events__about__labels__dns_half_duplex_resp.key} = 'check_dns_half_duplex_resp_percent' ;;
+    fields: [events__about__labels__dns_half_duplex_resp.value]
+    relationship: one_to_many
+  }
+  #zeek-doctor
+  join: events__about__labels__local_to_local {
+    view_label: "Events: About Labels Local to Local "
+    sql: LEFT JOIN UNNEST(${events__about.labels}) as events__about__labels__local_to_local ON ${events__about__labels__local_to_local.key} = 'check_local_to_local_percent' ;;
+    fields: [events__about__labels__local_to_local.value]
+    relationship: one_to_many
+  }
+  #zeek-doctor
+  join: events__about__labels__remote_to_remote {
+    view_label: "Events: About Labels Remote to Remote"
+    sql: LEFT JOIN UNNEST(${events__about.labels}) as events__about__labels__remote_to_remote ON ${events__about__labels__remote_to_remote.key} = 'check_remote_to_remote_percent' ;;
+    fields: [events__about__labels__remote_to_remote.value]
+    relationship: one_to_many
+  }
+  #zeek-doctor
+  join: events__about__labels__tcp_backscatter {
+    view_label: "Events: About Labels TCP Backscatter"
+    sql: LEFT JOIN UNNEST(${events__about.labels}) as events__about__labels__tcp_backscatter ON ${events__about__labels__tcp_backscatter.key} = 'check_tcp_backscatter_percent' ;;
+    fields: [events__about__labels__tcp_backscatter.value]
+    relationship: one_to_many
+  }
+  #zeek-doctor
+  join: events__about__labels__tcp_byte_counts_wrong {
+    view_label: "Events: About Labels TCP Byte Counts Wrong "
+    sql: LEFT JOIN UNNEST(${events__about.labels}) as events__about__labels__tcp_byte_counts_wrong ON ${events__about__labels__tcp_byte_counts_wrong.key} = 'check_tcp_byte_counts_wrong_percent' ;;
+    fields: [events__about__labels__tcp_byte_counts_wrong.value]
+    relationship: one_to_many
+  }
+  #zeek-doctor
+  join: events__about__labels__tcp_half_duplex {
+    view_label: "Events: About Labels TCP Half Duplex"
+    sql: LEFT JOIN UNNEST(${events__about.labels}) as events__about__labels__tcp_half_duplex ON ${events__about__labels__tcp_half_duplex.key} = 'check_tcp_half_duplex_percent' ;;
+    fields: [events__about__labels__tcp_half_duplex.value]
+    relationship: one_to_many
+  }
+  #zeek-doctor
+  join: events__about__labels__tcp_missed_bytes {
+    view_label: "Events: About Labels TCP Missed Bytes "
+    sql: LEFT JOIN UNNEST(${events__about.labels}) as events__about__labels__tcp_missed_bytes ON ${events__about__labels__tcp_missed_bytes.key} = 'check_tcp_missed_bytes_percent' ;;
+    fields: [events__about__labels__tcp_missed_bytes.value]
+    relationship: one_to_many
+  }
+  #zeek-doctor
+  join: events__about__labels__tcp_no_ssl_on_443 {
+    view_label: "Events: About Labels TCP No SSL On 443 "
+    sql: LEFT JOIN UNNEST(${events__about.labels}) as events__about__labels__tcp_no_ssl_on_443 ON ${events__about__labels__tcp_no_ssl_on_443.key} = 'check_tcp_no_ssl_on_443_percent' ;;
+    fields: [events__about__labels__tcp_no_ssl_on_443.value]
+    relationship: one_to_many
+  }
+  #zeek-doctor
+  join: events__about__labels__tcp_no_three_way_handshake {
+    view_label: "Events: About Labels TCP No Three Way Handshake "
+    sql: LEFT JOIN UNNEST(${events__about.labels}) as events__about__labels__tcp_no_three_way_handshake ON ${events__about__labels__tcp_no_three_way_handshake.key} = 'check_tcp_no_three_way_handshake_percent' ;;
+    fields: [events__about__labels__tcp_no_three_way_handshake.value]
+    relationship: one_to_many
+  }
+  #zeek-doctor
+  join: events__about__labels__tcp_retransmissions {
+    view_label: "Events: About Labels TCP retransmissions"
+    sql: LEFT JOIN UNNEST(${events__about.labels}) as events__about__labels__tcp_retransmissions ON ${events__about__labels__tcp_retransmissions.key} = 'check_tcp_retransmissions_percent' ;;
+    fields: [events__about__labels__tcp_retransmissions.value]
+    relationship: one_to_many
+  }
+  #zeek-doctor
+  join:events__about__labels__bursty  {
+    view_label: "Events: About Labels bursty "
+    sql: LEFT JOIN UNNEST(${events__about.labels}) as events__about__labels__bursty ON ${events__about__labels__bursty.key} = 'check_bursty_percent' ;;
+    fields: [events__about__labels__bursty.value]
+    relationship: one_to_many
+  }
+  #zeek-doctor
+  join: events__about__labels__tcp_scan {
+    view_label: "Events: About Labels TCP Scan "
+    sql: LEFT JOIN UNNEST(${events__about.labels}) as events__about__labels__tcp_scan ON ${events__about__labels__tcp_scan.key} = 'check_tcp_scan_percent' ;;
+    fields: [events__about__labels__tcp_scan.value]
     relationship: one_to_many
   }
   join: events__about__labels__connecting__user {

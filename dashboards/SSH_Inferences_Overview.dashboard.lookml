@@ -17,7 +17,7 @@
     filters:
       events__security_result.summary: "-NULL"
     sorts: [events__security_result.summary]
-    limit: 500
+    limit: 5000
     column_limit: 50
     x_axis_gridlines: false
     y_axis_gridlines: true
@@ -81,7 +81,7 @@
     filters:
       events__security_result.summary: "-NULL"
     sorts: [events__security_result.summary]
-    limit: 50
+    limit: 10
     column_limit: 50
     value_labels: labels
     label_type: labPer
@@ -153,8 +153,8 @@
     minimum_column_width: 75
     series_labels:
       events.ssh_host_count: Count
-      events__target__ip.events__target__ip: Destination IP Address
-      events__principal__ip.events__principal__ip: Source IP Address
+      events__target__ip.events__target__ip: Destination IP
+      events__principal__ip.events__principal__ip: Source IP
       security_result_summary_derived.summary_derived: Inferences
     series_cell_visualizations:
       events.ssh_host_count:
@@ -217,8 +217,8 @@
     col: 0
     width: 12
     height: 6
-  - title: Inferences for Hosts with Host_Key
-    name: Inferences for Hosts with Host_Key
+  - title: Inferences for Hosts with Host Key
+    name: Inferences for Hosts with Host Key
     model: corelight-chronicle
     explore: events
     type: looker_grid
@@ -254,8 +254,8 @@
     series_labels:
       events.ssh_host_key_count: Count
       events__security_result__detection_fields_host_key.value: Host Key
-      events__target__ip.events__target__ip: Destination
-      events__principal__ip.events__principal__ip: Source
+      events__target__ip.events__target__ip: Destination IP
+      events__principal__ip.events__principal__ip: Source IP
       security_result_summary_derived.summary_derived: Inferences
     series_cell_visualizations:
       events.ssh_host_key_count:
@@ -306,9 +306,9 @@
     series_labels:
       events.external_link: Raw Logs
       events__security_result.summary: Inferences
-      events__target__ip.events__target__ip: Destination
-      events__principal__ip.events__principal__ip: Source
-      events.event_time_time: Timestamp
+      events__target__ip.events__target__ip: Destination IP
+      events__principal__ip.events__principal__ip: Source IP
+      events.event_time_time: Time
     defaults_version: 1
     hidden_fields: [events.metadata__id]
     note_state: collapsed

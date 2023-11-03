@@ -17,7 +17,7 @@
       events__about__labels__indicator__type__filter.value: "-NULL"
       events__about__labels__source__filter.value: "-NULL"
     sorts: [events.event_time_date desc]
-    limit: 500
+    limit: 5000
     column_limit: 50
     x_axis_gridlines: false
     y_axis_gridlines: true
@@ -112,9 +112,9 @@
       events__about__labels__indicator__type.value: Indicator Type
       events__about__labels__seen__where.value: Where
       events__about__labels__indicator.value: Indicator
-      events__about__labels__confidence.value: Confidence {}
-      events__about__labels__catagory.value: Catagory {}
-      events__about__labels__source.value: Sources {}
+      events__about__labels__confidence.value: Confidence Score
+      events__about__labels__catagory.value: Categories
+      events__about__labels__source.value: Sources
       events.intel_details_count: Count
       events.target__port__intel: Port
     series_column_widths:
@@ -178,11 +178,11 @@
     minimum_column_width: 75
     series_labels:
       events.external_link: Raw Logs
-      events.event_time_time: _time
-      events__principal__ip.events__principal__ip: src
-      events__target__ip.events__target__ip: dest
-      events__about__labels__confidence.value: Confidence {}
-      events.target__port__intel: dest_port
+      events.event_time_time: Time
+      events__principal__ip.events__principal__ip: Source IP
+      events__target__ip.events__target__ip: Destination IP
+      events__about__labels__confidence.value: Confidence Score
+      events.target__port__intel: Destination Port
     defaults_version: 1
     listen:
       Indicator Type: events__about__labels__indicator__type.value
@@ -208,7 +208,7 @@
       events__about__labels__indicator__type__filter.value: "-NULL"
       events__about__labels__source__filter.value: "-NULL"
     sorts: [events.indicator_count desc 0]
-    limit: 50
+    limit: 10
     column_limit: 50
     value_labels: labels
     label_type: labPer
@@ -262,7 +262,7 @@
     allow_multiple_values: true
     required: true
     ui_config:
-      type: tag_list
+      type: dropdown_menu
       display: popover
       options:
       - intel
@@ -330,7 +330,7 @@
     allow_multiple_values: true
     required: false
     ui_config:
-      type: tag_list
+      type: dropdown_menu
       display: popover
     model: corelight-chronicle
     explore: events
@@ -343,7 +343,7 @@
     allow_multiple_values: true
     required: false
     ui_config:
-      type: tag_list
+      type: dropdown_menu
       display: popover
     model: corelight-chronicle
     explore: events

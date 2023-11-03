@@ -3,7 +3,7 @@
   layout: newspaper
   preferred_viewer: dashboards-next
   description: ''
-  preferred_slug: rvvsjHUczG2QTcV1tjM2CH
+  preferred_slug: pZzeyNoLU69OIoPJQmCPOr
   elements:
   - title: Top 20 Mime Types by File Count
     name: Top 20 Mime Types by File Count
@@ -66,15 +66,12 @@
     conditional_formatting_include_totals: false
     conditional_formatting_include_nulls: false
     defaults_version: 1
-    note_state: collapsed
-    note_display: above
-    note_text: Top Values
     listen:
       'Mime Type ': events__about.file__mime_type_filter
       Event Type: events.product_event_type
       Time Range: events.event_timestamp_time
       Corelight Sensor: events.observer__hostname
-    row: 0
+    row: 2
     col: 0
     width: 14
     height: 7
@@ -144,15 +141,12 @@
     show_silhouette: false
     totals_color: "#808080"
     defaults_version: 1
-    note_state: collapsed
-    note_display: above
-    note_text: Top Values
     listen:
       'Mime Type ': events__about.file__mime_type_filter
       Event Type: events.product_event_type
       Time Range: events.event_timestamp_time
       Corelight Sensor: events.observer__hostname
-    row: 0
+    row: 2
     col: 14
     width: 10
     height: 7
@@ -167,7 +161,7 @@
       events__about.file__mime_type: "-application/pkix-cert,-NULL"
       events.metadata__product_event_type: files
     sorts: [events.file_protocol_count desc 0]
-    limit: 500
+    limit: 10
     column_limit: 50
     value_labels: labels
     label_type: labPer
@@ -181,20 +175,17 @@
     conditional_formatting_include_totals: false
     conditional_formatting_include_nulls: false
     defaults_version: 1
-    note_state: collapsed
-    note_display: above
-    note_text: Top Values
     listen:
       'Mime Type ': events__about.file__mime_type_filter
       Event Type: events.product_event_type
       Time Range: events.event_timestamp_time
       Corelight Sensor: events.observer__hostname
-    row: 7
+    row: 9
     col: 8
     width: 8
     height: 6
-  - title: Top Receiving (rx_host) Hosts -  number of Files
-    name: Top Receiving (rx_host) Hosts -  number of Files
+  - title: Top Receiving (rx_host) Hosts -  Number of Files
+    name: Top Receiving (rx_host) Hosts -  Number of Files
     model: corelight-chronicle
     explore: events
     type: looker_grid
@@ -227,27 +218,24 @@
     truncate_header: false
     minimum_column_width: 75
     series_labels:
-      events__target__ip.events__target__ip: dest_host
-      events.dest_file_count: dest_file_count
+      events__target__ip.events__target__ip: Destination Host
+      events.dest_file_count: Destination File Count
     series_cell_visualizations:
       events.dest_file_count:
         is_active: false
     defaults_version: 1
     hidden_pivots: {}
-    note_state: collapsed
-    note_display: above
-    note_text: Hosts
     listen:
       'Mime Type ': events__about.file__mime_type_filter
       Event Type: events.product_event_type
       Time Range: events.event_timestamp_time
       Corelight Sensor: events.observer__hostname
-    row: 19
+    row: 23
     col: 0
     width: 13
     height: 6
-  - title: Top Transmitting (tx_host) Hosts - number of Files
-    name: Top Transmitting (tx_host) Hosts - number of Files
+  - title: Top Transmitting (tx_host) Hosts - Number of Files
+    name: Top Transmitting (tx_host) Hosts - Number of Files
     model: corelight-chronicle
     explore: events
     type: looker_grid
@@ -280,21 +268,18 @@
     truncate_header: false
     minimum_column_width: 75
     series_labels:
-      events__principal__ip.events__principal__ip: src_host
-      events.src_file_count: src_file_count
+      events__principal__ip.events__principal__ip: Source Host
+      events.src_file_count: Source File Count
     series_cell_visualizations:
       events.src_file_count:
         is_active: false
     defaults_version: 1
-    note_state: collapsed
-    note_display: above
-    note_text: Hosts
     listen:
       'Mime Type ': events__about.file__mime_type_filter
       Event Type: events.product_event_type
       Time Range: events.event_timestamp_time
       Corelight Sensor: events.observer__hostname
-    row: 13
+    row: 17
     col: 0
     width: 13
     height: 6
@@ -332,22 +317,19 @@
     truncate_header: false
     minimum_column_width: 75
     series_labels:
-      events__target__ip.events__target__ip: dest_host
-      events.dest_bytes: dest_bytes
+      events__target__ip.events__target__ip: Destination Host
+      events.dest_bytes: Destination Bytes
     series_cell_visualizations:
       events.dest_bytes:
         is_active: false
     defaults_version: 1
     hidden_pivots: {}
-    note_state: collapsed
-    note_display: above
-    note_text: Hosts
     listen:
       'Mime Type ': events__about.file__mime_type_filter
       Event Type: events.product_event_type
       Time Range: events.event_timestamp_time
       Corelight Sensor: events.observer__hostname
-    row: 19
+    row: 23
     col: 13
     width: 11
     height: 6
@@ -385,22 +367,19 @@
     truncate_header: false
     minimum_column_width: 75
     series_labels:
-      events__principal__ip.events__principal__ip: src_host
-      events.src_bytes: src_bytes
+      events__principal__ip.events__principal__ip: Source Host
+      events.src_bytes: Source Bytes
     series_cell_visualizations:
       events.src_bytes:
         is_active: false
     defaults_version: 1
     hidden_pivots: {}
-    note_state: collapsed
-    note_display: above
-    note_text: Hosts
     listen:
       'Mime Type ': events__about.file__mime_type_filter
       Event Type: events.product_event_type
       Time Range: events.event_timestamp_time
       Corelight Sensor: events.observer__hostname
-    row: 13
+    row: 17
     col: 13
     width: 11
     height: 6
@@ -418,7 +397,7 @@
       directions.file__mime_type_filter: "-NULL"
     sorts: [directions.directions_directional, directions.event_timestamp_directions_date
         desc]
-    limit: 500
+    limit: 5000
     column_limit: 50
     x_axis_gridlines: false
     y_axis_gridlines: true
@@ -460,15 +439,12 @@
     totals_color: "#808080"
     defaults_version: 1
     hidden_pivots: {}
-    note_state: collapsed
-    note_display: above
-    note_text: Top Values
     listen:
       'Mime Type ': directions.file__mime_type
       Event Type: directions.product_event_type
       Time Range: directions.event_timestamp_directions_time
       Corelight Sensor: directions.observer_host_name_filter_directions
-    row: 7
+    row: 9
     col: 0
     width: 8
     height: 6
@@ -486,7 +462,7 @@
       directions.file__mime_type_filter: "-NULL"
     sorts: [directions.directions_directional, directions.event_timestamp_directions_date
         desc]
-    limit: 500
+    limit: 5000
     column_limit: 50
     x_axis_gridlines: false
     y_axis_gridlines: true
@@ -549,18 +525,35 @@
     conditional_formatting_include_nulls: false
     defaults_version: 1
     hidden_pivots: {}
-    note_state: collapsed
-    note_display: above
-    note_text: Top Values
     listen:
       'Mime Type ': directions.file__mime_type
       Event Type: directions.product_event_type
       Time Range: directions.event_timestamp_directions_time
       Corelight Sensor: directions.observer_host_name_filter_directions
-    row: 7
+    row: 9
     col: 16
     width: 8
     height: 6
+  - name: " (Copy)"
+    type: text
+    title_text: " (Copy)"
+    subtitle_text: ''
+    body_text: '[{"type":"h1","children":[{"text":"Hosts"}],"align":"center","id":1697698291372}]'
+    rich_content_json: '{"format":"slate"}'
+    row: 15
+    col: 0
+    width: 24
+    height: 2
+  - name: ''
+    type: text
+    title_text: ''
+    subtitle_text: ''
+    body_text: '[{"type":"h1","children":[{"text":"Top values"}],"align":"center","id":1697698250405}]'
+    rich_content_json: '{"format":"slate"}'
+    row: 0
+    col: 0
+    width: 24
+    height: 2
   filters:
   - name: Event Type
     title: Event Type
@@ -569,7 +562,7 @@
     allow_multiple_values: true
     required: true
     ui_config:
-      type: tag_list
+      type: dropdown_menu
       display: popover
       options:
       - files
@@ -598,7 +591,7 @@
     allow_multiple_values: true
     required: false
     ui_config:
-      type: tag_list
+      type: dropdown_menu
       display: popover
     model: corelight-chronicle
     explore: events
@@ -611,7 +604,7 @@
     allow_multiple_values: true
     required: false
     ui_config:
-      type: tag_list
+      type: dropdown_menu
       display: popover
     model: corelight-chronicle
     explore: events

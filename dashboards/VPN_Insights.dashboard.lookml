@@ -5,8 +5,8 @@
   description: ''
   preferred_slug: BDt67HeAkVpOHz8NtCCCii
   elements:
-  - title: VPN Insights
-    name: VPN Insights
+  - title: Inference Type
+    name: Inference Type
     model: corelight-chronicle
     explore: events
     type: looker_pie
@@ -55,7 +55,7 @@
       events__about__labels__vpn__type__filter.value: "-NULL"
     sorts: [events__about__labels__inferences_vpn.value, events.event_timestamp_date
         desc]
-    limit: 500
+    limit: 5000
     column_limit: 50
     x_axis_gridlines: false
     y_axis_gridlines: true
@@ -109,8 +109,8 @@
     col: 12
     width: 12
     height: 6
-  - title: Tom VPN Users
-    name: Tom VPN Users
+  - title: Top VPN Users
+    name: Top VPN Users
     model: corelight-chronicle
     explore: events
     type: looker_grid
@@ -143,9 +143,9 @@
     truncate_header: false
     minimum_column_width: 75
     series_labels:
-      events__principal__ip.events__principal__ip: id_orig_h
-      events.principal_count: count
-      events.principal_count_percent: percent
+      events__principal__ip.events__principal__ip: Source IP
+      events.principal_count: Count
+      events.principal_count_percent: Percent
     series_cell_visualizations:
       events.principal_count:
         is_active: false
@@ -199,9 +199,9 @@
     minimum_column_width: 75
     series_labels:
       events.external_link: Raw Logs
-      events.event_timestamp_time: _time
-      events__principal__ip.events__principal__ip: id_orig_h
-      events__target__ip.events__target__ip: id_resp_h
+      events.event_timestamp_time: Time
+      events__principal__ip.events__principal__ip: Source IP
+      events__target__ip.events__target__ip: Destination IP
       events__about__labels__inferences_vpn.value: Inferences
     defaults_version: 1
     listen:
@@ -278,7 +278,7 @@
       events.product_event_type: vpn
       events__about__labels__vpn__type__filter.value: "-NULL"
     sorts: [events.orig_bytes_sum desc]
-    limit: 500
+    limit: 5000
     column_limit: 50
     show_view_names: false
     show_row_numbers: true
@@ -301,15 +301,15 @@
     truncate_header: false
     minimum_column_width: 75
     series_labels:
-      events.gigabyte_count: number_of_conns
-      events__principal__ip.events__principal__ip: id_orig_h
-      events__target__ip.events__target__ip: id_resp_h
-      events.target__port: id_resp_p
-      events.protocol_string: protocol
-      events__target__ip_geo_artifact.location__country_or_region: Resp_Country
-      events.target__application: service
-      events.resp_bytes_sum: resp_bytes_sum
-      events.orig_bytes_sum: orig_bytes_sum
+      events.gigabyte_count: Number of Connections
+      events__principal__ip.events__principal__ip: Source IP
+      events__target__ip.events__target__ip: Destination IP
+      events.target__port: Destination Port
+      events.protocol_string: Protocol
+      events__target__ip_geo_artifact.location__country_or_region: Destination Country
+      events.target__application: Service
+      events.resp_bytes_sum: Sum of Destination Bytes
+      events.orig_bytes_sum: Sum of Source Bytes
     series_cell_visualizations:
       events.gigabyte_count:
         is_active: false
@@ -334,7 +334,7 @@
       events.product_event_type: vpn
       events__about__labels__vpn__type__filter.value: "-NULL"
     sorts: [events.vpn_type_count desc]
-    limit: 500
+    limit: 50
     column_limit: 50
     value_labels: labels
     label_type: labPer
@@ -405,7 +405,7 @@
     allow_multiple_values: true
     required: true
     ui_config:
-      type: tag_list
+      type: dropdown_menu
       display: popover
       options:
       - vpn
@@ -434,7 +434,7 @@
     allow_multiple_values: true
     required: false
     ui_config:
-      type: tag_list
+      type: dropdown_menu
       display: popover
     model: corelight-chronicle
     explore: events
@@ -447,7 +447,7 @@
     allow_multiple_values: true
     required: false
     ui_config:
-      type: tag_list
+      type: dropdown_menu
       display: popover
     model: corelight-chronicle
     explore: events

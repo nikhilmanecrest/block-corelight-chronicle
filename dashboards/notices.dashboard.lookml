@@ -72,7 +72,7 @@
     filters:
       events__security_result.description: "-NULL"
     sorts: [events__security_result.description]
-    limit: 50
+    limit: 10
     column_limit: 50
     value_labels: labels
     label_type: labPer
@@ -120,7 +120,7 @@
     model: corelight-chronicle
     explore: events
     type: looker_grid
-    fields: [events.event_timestamp_time, events.metadata__product_event_type, events__principal__ip.events__principal__ip,
+    fields: [events.event_timestamp_time, events__principal__ip.events__principal__ip,
       events.severity_notice, events.metadata__id, events.external_link]
     sorts: [events.event_timestamp_time desc]
     limit: 5000
@@ -146,11 +146,10 @@
     truncate_header: false
     minimum_column_width: 75
     series_labels:
-      events.event_timestamp_time: Timestamp
+      events.event_timestamp_time: Time
       events.external_link: Raw Logs
-      events.severity_notice: severity_display
-      events.metadata__product_event_type: sourcetype
-      events__principal__ip.events__principal__ip: src
+      events.severity_notice: Severity
+      events__principal__ip.events__principal__ip: Source IP
     hidden_fields: [events.metadata__id]
     defaults_version: 1
     listen:
@@ -252,7 +251,7 @@
     filters:
       events__security_result.severity_details: "-NULL"
     sorts: [events.severity_count desc 0]
-    limit: 500
+    limit: 10
     column_limit: 50
     value_labels: labels
     label_type: labPer

@@ -40,9 +40,9 @@
     truncate_header: false
     minimum_column_width: 75
     series_labels:
-      events.network__tls__server__certificate__subject: ssl_subject
-      events.ssl_subject_count: count
-      events.ssl_subject_count_percent: percent
+      events.network__tls__server__certificate__subject: SSL Subject
+      events.ssl_subject_count: Count
+      events.ssl_subject_count_percent: Percent
     series_cell_visualizations:
       events.ssl_subject_count:
         is_active: false
@@ -116,9 +116,9 @@
     truncate_header: false
     minimum_column_width: 75
     series_labels:
-      events.network__tls__server__certificate__subject: ssl_subject
-      events.ssl_subject_count: count
-      events.ssl_subject_count_percent: percent
+      events.network__tls__server__certificate__subject: SSL Subject
+      events.ssl_subject_count: Count
+      events.ssl_subject_count_percent: Percent
     series_cell_visualizations:
       events.ssl_subject_count:
         is_active: false
@@ -191,9 +191,9 @@
     truncate_header: false
     minimum_column_width: 75
     series_labels:
-      events.cert_not_valid_after_time: certificate.not_valid_after
-      events.network__tls__server__certificate__subject: certificate.subject
-      events.cert_not_valid_after: certificate.not_valid_after
+      events.cert_not_valid_after_time: Certificate Not Valid After
+      events.network__tls__server__certificate__subject: Certificate Subject
+      events.cert_not_valid_after: Certificate Not Valid After
       events.external_link: Raw Logs
     x_axis_gridlines: false
     y_axis_gridlines: true
@@ -237,7 +237,7 @@
     allow_multiple_values: true
     required: true
     ui_config:
-      type: tag_list
+      type: dropdown_menu
       display: popover
       options:
       - x509
@@ -266,7 +266,7 @@
     allow_multiple_values: true
     required: false
     ui_config:
-      type: tag_list
+      type: dropdown_menu
       display: popover
     model: corelight-chronicle
     explore: events

@@ -1,4 +1,4 @@
-- dashboard: log_hunting
+- dashboard: security_workflows__log_hunting
   title: Security Workflows - Log Hunting
   layout: newspaper
   preferred_viewer: dashboards-next
@@ -12,7 +12,7 @@
     type: looker_pie
     fields: [events.metadata__product_event_type, events.source_count_pie]
     sorts: [events.metadata__product_event_type]
-    limit: 50
+    limit: 10
     column_limit: 50
     dynamic_fields:
     - measure: count_of_metadata_product_event_type
@@ -64,10 +64,10 @@
     defaults_version: 1
     listen:
       Time Range: events.event_time_time
-      Sourcetype: events.metadata__product_event_type
-      Src IP: events__principal__ip.events__principal__ip
-      Dest IP: events__target__ip.events__target__ip
       UID, FUID: events__about__labels__uid.value
+      Event Type: events.metadata__product_event_type
+      Source IP: events__principal__ip.events__principal__ip
+      Destination IP: events__target__ip.events__target__ip
     row: 0
     col: 0
     width: 12
@@ -137,7 +137,7 @@
     y_axes: [{label: Count, orientation: bottom, series: [{axisId: events.count, id: events.count,
             name: Events}], showLabels: true, showValues: true, unpinAxis: false,
         tickDensity: default, tickDensityCustom: 5, type: linear}]
-    x_axis_label: Sourcetype
+    x_axis_label: Event Type
     x_axis_zoom: true
     y_axis_zoom: true
     series_colors: {}
@@ -149,10 +149,10 @@
     defaults_version: 1
     listen:
       Time Range: events.event_time_time
-      Sourcetype: events.metadata__product_event_type
-      Src IP: events__principal__ip.events__principal__ip
-      Dest IP: events__target__ip.events__target__ip
       UID, FUID: events__about__labels__uid.value
+      Event Type: events.metadata__product_event_type
+      Source IP: events__principal__ip.events__principal__ip
+      Destination IP: events__target__ip.events__target__ip
     row: 0
     col: 12
     width: 12
@@ -194,11 +194,11 @@
     truncate_header: false
     minimum_column_width: 75
     series_labels:
-      events.event_time_time: Timestamp
-      events.metadata__product_event_type: Sourcetype
-      events__principal__ip.events__principal__ip: Src
-      events__target__ip.events__target__ip: Dest
-      events.target__port: Dest_port
+      events.event_time_time: Time
+      events.metadata__product_event_type: Event Type
+      events__principal__ip.events__principal__ip: Source IP
+      events__target__ip.events__target__ip: Destination IP
+      events.target__port: Destination Port
       events.external_link: Raw Logs
       events__about__labels__uid__only.value: UID
       events__about__labels__fuid__only.value: FUID
@@ -230,10 +230,10 @@
     hidden_fields: [events.metadata__id]
     listen:
       Time Range: events.event_time_time
-      Sourcetype: events.metadata__product_event_type
-      Src IP: events__principal__ip.events__principal__ip
-      Dest IP: events__target__ip.events__target__ip
       UID, FUID: events__about__labels__uid.value
+      Event Type: events.metadata__product_event_type
+      Source IP: events__principal__ip.events__principal__ip
+      Destination IP: events__target__ip.events__target__ip
     row: 6
     col: 0
     width: 24
@@ -253,8 +253,8 @@
     explore: events
     listens_to_filters: []
     field: events.event_time_time
-  - name: Sourcetype
-    title: Sourcetype
+  - name: Event Type
+    title: Event Type
     type: field_filter
     default_value: ''
     allow_multiple_values: true
@@ -266,8 +266,8 @@
     explore: events
     listens_to_filters: []
     field: events.metadata__product_event_type
-  - name: Src IP
-    title: Src IP
+  - name: Source IP
+    title: Source IP
     type: field_filter
     default_value: ''
     allow_multiple_values: true
@@ -279,8 +279,8 @@
     explore: events
     listens_to_filters: []
     field: events__principal__ip.events__principal__ip
-  - name: Dest IP
-    title: Dest IP
+  - name: Destination IP
+    title: Destination IP
     type: field_filter
     default_value: ''
     allow_multiple_values: true

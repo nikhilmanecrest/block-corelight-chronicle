@@ -287,12 +287,12 @@
     truncate_header: false
     minimum_column_width: 75
     series_labels:
-      events__principal__ip.events__principal__ip: id_orig_h
-      events__target__ip.events__target__ip: id_resp_h
-      events__target__ip_geo_artifact.location__country_or_region: country
-      events__target__ip_geo_artifact.network__dns_domain: resp_hostname
-      events.protocol_string: proto
-      events.sum_orig_byte: bytes
+      events__principal__ip.events__principal__ip: Source IP
+      events__target__ip.events__target__ip: Destination IP
+      events__target__ip_geo_artifact.location__country_or_region: Destination Country
+      events__target__ip_geo_artifact.network__dns_domain: Destination  Hostname
+      events.protocol_string: Proto
+      events.sum_orig_byte: Bytes
     series_cell_visualizations:
       events.sum_orig_byte:
         is_active: false
@@ -366,12 +366,12 @@
     truncate_header: false
     minimum_column_width: 75
     series_labels:
-      events__principal__ip.events__principal__ip: id_orig_h
-      events__target__ip.events__target__ip: id_resp_h
-      events.protocol_string: proto
-      events__principal__ip_geo_artifact.location__country_or_region: country
-      events__principal__ip_geo_artifact.network__dns_domain: orig_hostname
-      events.sum_orig_byte_inbound: bytes
+      events__principal__ip.events__principal__ip: Source IP
+      events__target__ip.events__target__ip: Destination IP
+      events.protocol_string: Proto
+      events__principal__ip_geo_artifact.location__country_or_region: Source Country
+      events__principal__ip_geo_artifact.network__dns_domain: Source Hostname
+      events.sum_orig_byte_inbound: Bytes
     series_cell_visualizations:
       events.sum_orig_byte_inbound:
         is_active: false
@@ -441,11 +441,11 @@
     truncate_header: false
     minimum_column_width: 75
     series_labels:
-      events__principal__ip.events__principal__ip: id_orig_h
-      events__target__ip.events__target__ip: id_resp_h
-      events.protocol_string: proto
-      events__about__labels.value: uid
-      events.avg_duration: duration
+      events__principal__ip.events__principal__ip: Source IP
+      events__target__ip.events__target__ip: Destination IP
+      events.protocol_string: Proto
+      events__about__labels.value: UID
+      events.avg_duration: Duration
     series_cell_visualizations:
       events.avg_duration:
         is_active: false
@@ -507,53 +507,53 @@
     explore: events
     listens_to_filters: [Event Type]
     field: events.observer__hostname__filter
-  - name: Originator IP (id_orig_h)
-    title: Originator IP (id_orig_h)
+  - name: Source IP
+    title: Source IP
     type: field_filter
     default_value: ''
     allow_multiple_values: true
     required: false
     ui_config:
-      type: dropdown_menu
+      type: tag_list
       display: inline
     model: corelight-chronicle
     explore: events
     listens_to_filters: [Event Type]
     field: events.principal__ip__filter
-  - name: Originator Port (id_orig_p)
-    title: Originator Port (id_orig_p)
+  - name: Source Port
+    title: Source Port
     type: field_filter
     default_value: ''
     allow_multiple_values: true
     required: false
     ui_config:
-      type: dropdown_menu
+      type: tag_list
       display: inline
     model: corelight-chronicle
     explore: events
     listens_to_filters: [Event Type]
     field: events.principal__port__filter
-  - name: Responder IP (id_resp_h)
-    title: Responder IP (id_resp_h)
+  - name: Destination IP
+    title: Destination IP
     type: field_filter
     default_value: ''
     allow_multiple_values: true
     required: false
     ui_config:
-      type: dropdown_menu
+      type: tag_list
       display: inline
     model: corelight-chronicle
     explore: events
     listens_to_filters: [Event Type]
     field: events.target__ip__filter
-  - name: Responder Port (id_resp_p)
-    title: Responder Port (id_resp_p)
+  - name: Destination Port
+    title: Destination Port
     type: field_filter
     default_value: ''
     allow_multiple_values: true
     required: false
     ui_config:
-      type: dropdown_menu
+      type: tag_list
       display: inline
     model: corelight-chronicle
     explore: events

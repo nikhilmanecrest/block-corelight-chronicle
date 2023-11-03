@@ -41,9 +41,9 @@
     truncate_header: false
     minimum_column_width: 75
     series_labels:
-      directions.security_result_detection_fields_value_directions: validation_status
-      directions.vali_status_count: count
-      directions.vali_status_count_percent: percent
+      directions.security_result_detection_fields_value_directions: Validation Status
+      directions.vali_status_count: Count
+      directions.vali_status_count_percent: Percent
     series_cell_visualizations:
       directions.vali_status_count:
         is_active: false
@@ -68,7 +68,7 @@
       directions.observer_host_name_directions: "-NULL"
       directions.directions_directions: "-NULL"
     sorts: [directions.cipher_count desc 0]
-    limit: 50
+    limit: 10
     column_limit: 50
     value_labels: labels
     label_type: labPer
@@ -133,9 +133,9 @@
     truncate_header: false
     minimum_column_width: 75
     series_labels:
-      directions.network_tls_client_server_directions: c_id
-      directions.cid_count: count
-      directions.cid_count_percent: percent
+      directions.network_tls_client_server_directions: Certificate ID
+      directions.cid_count: Count
+      directions.cid_count_percent: Percent
     series_cell_visualizations:
       directions.cid_count:
         is_active: false
